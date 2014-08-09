@@ -54,7 +54,7 @@ Adafruit_WS2801 strip = Adafruit_WS2801(NumberOfPixels, dataPin, clockPin);
 //PUSHBUTTON ON I/O 4, NC TO GND <- NOT USED NOW!
 
 
-uint8_t Col_set = 3;    //Colorset setting
+uint8_t Col_set = 5;    //Colorset setting
 
 
 void setup() {
@@ -75,10 +75,14 @@ void loop() {
   //colorWipe(Color(0, 0, 255), 50);
   //rainbow(20);
   melon(20);
+  if (Col_set > 4) Col_set = 0; else Col_set++;
   fire(5);
+  if (Col_set > 4) Col_set = 0; else Col_set++;
   welding(8);
+  if (Col_set > 4) Col_set = 0; else Col_set++;
   grinding(32);
   if (Col_set > 4) Col_set = 0; else Col_set++;
+  if (Col_set > 4) Col_set = 0; else Col_set++; //To make sure every effect runs with every color set.
   
 }
 
